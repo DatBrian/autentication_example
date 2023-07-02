@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.js"
 import "bootstrap"
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import  VueCookies  from 'vue-cookies';
 
 const firebaseConfig = {
   apiKey: "AIzaSyD8rlu70CnPQNia7an3IMhcbrKJeJGAhkw",
@@ -17,6 +17,8 @@ const firebaseConfig = {
   measurementId: "G-0WE7LSKB34"
 };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-createApp(App).use(router).mount('#app')
+initializeApp(firebaseConfig);
+
+const app =createApp(App)
+
+app.use(router).use(VueCookies, {expires: '1d'}).mount('#app')  
