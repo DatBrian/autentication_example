@@ -23,13 +23,13 @@ import {getAuth, signInWithEmailAndPassword} from 'firebase/auth'
 let email:Ref<string> = ref('');
 let password: Ref<string> = ref('');
 
-const authUser = async () => {
+const authUser = async ():Promise<void> => {
     const auth = getAuth();
     try {
         await signInWithEmailAndPassword(auth, email.value, password.value);
         alert("Éxito");
     } catch (error) {
-        alert("error: " + error.message)
+        alert("error: ")
     }
 }
 

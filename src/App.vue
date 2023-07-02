@@ -2,7 +2,8 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/auth">Access</router-link> |
-    <router-link to="/firebase">Firebase</router-link>
+    <router-link to="/firebase">Firebase</router-link> |
+    <router-link to="/social">Social</router-link>
   </nav>
   <router-view />
 </template>
