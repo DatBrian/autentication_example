@@ -31,6 +31,9 @@ const authUser = async () => {
 
 }
 
+const getUserInfo = (){
+    const token = $session.get('auth');
+}
 
 </script>
 

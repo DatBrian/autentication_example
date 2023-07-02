@@ -5,7 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.js"
 import "bootstrap"
 import { initializeApp } from "firebase/app";
-import  VueCookies  from 'vue-cookies';
+import VueCookies from 'vue-cookies';
+import VueSession from 'vue-session';
 
 const firebaseConfig = {
   apiKey: "AIzaSyD8rlu70CnPQNia7an3IMhcbrKJeJGAhkw",
@@ -21,4 +22,18 @@ initializeApp(firebaseConfig);
 
 const app =createApp(App)
 
-app.use(router).use(VueCookies, {expires: '1d'}).mount('#app')  
+app.use(router).use(VueCookies, { expires: '1d' }).use(VueSession).mount('#app')
+
+
+// $cookies.set('auth', 1000)
+// $cookies.set('auth',)
+// $cookies.remove('auth')
+// $cookies.isKey('auth')
+// $cookies.keys()
+
+// $session.start()
+// $session.set('auth', 1000)
+// $session.get('auth')
+// $session.id()
+// $session.renew()
+// $session.destroy()

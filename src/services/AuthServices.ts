@@ -46,6 +46,8 @@ class AuthService {
             }
 
             this.jwt.value = res.data.access_token;
+            $session.start()
+            $session.set('auth', res.data.access_token);
             return true;
 
         } catch (error) {
